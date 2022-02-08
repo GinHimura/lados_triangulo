@@ -5,26 +5,27 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+	
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		double xA, xB, xC, yA, yB, yC, pX, pY, areaX, areaY;
-		
-        System.out.println("Enter the measures od triangle X: ");
-        xA = sc.nextDouble();
-        xB = sc.nextDouble();
-        xC = sc.nextDouble();
+	    Triangulo x, y;
+	    x = new Triangulo();
+	    y = new Triangulo();
+	    
+	    System.out.println("Enter the measures od triangle X: ");
+        x.a = sc.nextDouble();
+        x.b = sc.nextDouble();
+        x.c = sc.nextDouble();
         
         System.out.println("\nEnter the measures od triangle Y: ");
-        yA = sc.nextDouble();
-        yB = sc.nextDouble();
-        yC = sc.nextDouble();
+        y.a = sc.nextDouble();
+        y.b = sc.nextDouble();
+        y.c = sc.nextDouble();
         
-        pX = (xA + xB + xC) / 2;
-        pY = (yA + yB + yC) / 2;
+        double areaX = x.area();
+        double areaY = y.area();
         
-        areaX = Math.sqrt(pX * (pX - xA) * (pX - xB) * (pX - xC));
-        areaY = Math.sqrt(pY * (pY - yA) * (pY - yB) * (pY - yC));
         System.out.println("\nTriangle X area: " + String.format("%.4f", areaX));
         System.out.println("Triangle Y area: " + String.format("%.4f", areaY));
         
@@ -36,5 +37,4 @@ public class Main {
         
         sc.close();
 	}
-
 }
